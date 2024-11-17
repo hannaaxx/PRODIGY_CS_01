@@ -1,48 +1,34 @@
 # PRODIGY_CS_01
-# Implement Caesar Cipher
+**Caesar Cipher**
 
-This Python program allows you to encrypt and decrypt messages using the classic Caesar cipher algorithm. The Caesar cipher is a simple substitution cipher that shifts each letter in the plaintext by a fixed number of positions down or up the alphabet.
-
+This Python script implements the Caesar cipher, a simple substitution cipher where each letter of the plaintext is shifted a certain number of places down the alphabet.
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+**How to Use:**
 
-## Features
+1. **Run the Script:**
+   Simply run the Python script.
 
-- **Encryption:** Encrypt your messages with a specified shift value.
-- **Decryption:** Decrypt Caesar cipher encrypted messages with the correct shift value.
-- **Support for Alphabetic Characters:** Works with both uppercase and lowercase letters, preserving non-alphabet characters.
-- **User-Friendly Interface:** Provides a simple command-line interface for ease of use.
+2. **Input:**
+   - **Message:** Enter the text you want to encrypt or decrypt.
+   - **Shift Value:** Enter the number of positions to shift each letter.
 
-## How to Use
+**Example:**
 
-1. Clone this repository to your local machine.
+If you input the message "HELLO WORLD" with a shift value of 3, the encrypted message will be "KHOOR ZRUOG". 
 
-2. Run the Python script:
-    ```
-    python caesar_cipher.py
-    ```
+**Explanation:**
 
-3. Choose the operation:
-   - Type `encode` to encrypt a message.
-   - Type `decode` to decrypt a message.
+The `caesar_cipher` function takes the text and shift value as input. It iterates over each character in the text:
 
-4. Enter your message when prompted.
-
-5. Enter the shift number (an integer) when prompted. The shift value should be between 0 and 25, and it can be any positive or negative integer. If the shift value is greater than 25, it wraps around the alphabet.
-
-6. Get the result: The program will display the encrypted or decrypted message.
-
-7. If you wish to use the program again, type `yes` when asked. To exit, type `no`.
-
-## Example Usage
-
-- To encrypt a message: Choose `encode`, input your message, and specify the shift value.
-- To decrypt a message: Choose `decode`, input the encrypted message, and specify the correct shift value used for encryption.
-
-## Contributions
-
-Contributions and suggestions are welcome! Feel free to fork this repository and submit pull requests to improve the program.
+1. **Shifting Characters:**
+   - If the character is a letter, it shifts its ASCII code by the specified shift value.
+   - To ensure the shifted character remains within the alphabet range, a modulo operation is used.
+2. **Converting Back to Characters:**
+   - The shifted ASCII code is converted back to a character using the `chr()` function.
+3. **Handling Non-Alphabetic Characters:**
+   - Non-alphabetic characters are added to the result without modification.
 
 ## License
 
